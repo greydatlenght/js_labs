@@ -6,12 +6,12 @@
 const x1 = 10;
 const y1 = 5;
 
-const x2 = 2;
+const x2 = -2;
 const y2 = 3;
 
-firstSide = x2 - x1;
-secondSide = y2 - y1;
-let result = Math.sqrt(firstSide ** 2 * secondSide ** 2);
+firstSide = Math.abs(x2 - x1);
+secondSide = Math.abs(y2 - y1);
+let result = firstSide * secondSide;
 
 console.log(`Площадь прямоугольника: ${result}.`);
 

@@ -46,6 +46,6 @@ const y = 5;
 const randomNumber = Math.trunc(Math.random() * (y - x) + x);
 
 let randomResult = Math.ceil(randomNumber / 2);
-randomResult = 2 * randomResult - 1;
+randomResult = 2 * randomResult + 1;
 
 console.log(`Результат генератора: ${randomResult}`);

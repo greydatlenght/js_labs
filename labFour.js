@@ -92,3 +92,10 @@ for (let i = 1; i <= 31; i++) {
     console.log(`${i} января, ${days[j]}`);
     j++;
 }
+
+
+// Другое решение
+
+for (let i = 1; i <= 31; i++) {
+  console.log(`${i} января, ${days[(i + days.indexOf(firstDay) - 1) % 7]}`);
+}

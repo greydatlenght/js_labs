@@ -1,9 +1,7 @@
 function separateString(data) {
     let stringArray = ["string"];
     for (let i = 0; i < data.length; i++) {
-      if (typeof data[i] == "string") {
-        stringArray.push(data[i]);
-      }
+        typeof data[i] == "string" ? stringArray.push(data[i]) : data[i] = data[i];
     }
     return stringArray;
   }
@@ -11,9 +9,7 @@ function separateString(data) {
   function separateNumber(data) {
     let numberArray = ["number"];
     for (let i = 0; i < data.length; i++) {
-      if (typeof data[i] == "number") {
-        numberArray.push(data[i]);
-      }
+      typeof data[i] == "number" ? numberArray.push(data[i]) : data[i] = data[i];
     }
     return numberArray;
   }
@@ -21,13 +17,7 @@ function separateString(data) {
   function separateAnother(data) {
     let anotherArray = ["another"];
     for (let i = 0; i < data.length; i++) {
-      if (
-        typeof data[i] != "string" &&
-        typeof data[i] != "number" &&
-        typeof data[i] != "object"
-      ) {
-        anotherArray.push(data[i]);
-      }
+        typeof data[i] != "string" && typeof data[i] != "number" && typeof data[i] != "object" ? anotherArray.push(data[i]) : data[i] = data[i];
     }
     return anotherArray;
   }
@@ -35,9 +25,7 @@ function separateString(data) {
   function separateArray(data) {
     let arrayArray = ["array"];
     for (let i = 0; i < data.length; i++) {
-      if (Array.isArray(data[i])) {
-        arrayArray.push(data[i]);
-      }
+      Array.isArray(data[i]) ? arrayArray.push(data[i]) : data[i] = data [i];
     }
     return arrayArray;
   }

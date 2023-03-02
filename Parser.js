@@ -1,67 +1,58 @@
 function separateString(data) {
-  let stringArray = ["string"];
-  for (let i = 0; i < data.length; i++) {
-    if (typeof data[i] == "string") {
-      stringArray.push(data[i]);
+    let stringArray = ["string"];
+    for (let i = 0; i < data.length; i++) {
+      if (typeof data[i] == "string") {
+        stringArray.push(data[i]);
+      }
     }
+    return stringArray;
   }
-  return stringArray;
-}
-
-function separateNumber(data) {
-  let numberArray = ["number"];
-  for (let i = 0; i < data.length; i++) {
-    if (typeof data[i] == "number") {
-      numberArray.push(data[i]);
+  
+  function separateNumber(data) {
+    let numberArray = ["number"];
+    for (let i = 0; i < data.length; i++) {
+      if (typeof data[i] == "number") {
+        numberArray.push(data[i]);
+      }
     }
+    return numberArray;
   }
-  return numberArray;
-}
-
-function separateAnother(data) {
-  let anotherArray = ["another"];
-  for (let i = 0; i < data.length; i++) {
-    if (
-      typeof data[i] != "string" &&
-      typeof data[i] != "number" &&
-      typeof data[i] != "object"
-    ) {
-      anotherArray.push(data[i]);
+  
+  function separateAnother(data) {
+    let anotherArray = ["another"];
+    for (let i = 0; i < data.length; i++) {
+      if (
+        typeof data[i] != "string" &&
+        typeof data[i] != "number" &&
+        typeof data[i] != "object"
+      ) {
+        anotherArray.push(data[i]);
+      }
     }
+    return anotherArray;
   }
-  return anotherArray;
-}
-
-function separateArray(data) {
-  let arrayArray = ["array"];
-  for (let i = 0; i < data.length; i++) {
-    if (Array.isArray(data[i])) {
-      arrayArray.push(data[i]);
+  
+  function separateArray(data) {
+    let arrayArray = ["array"];
+    for (let i = 0; i < data.length; i++) {
+      if (Array.isArray(data[i])) {
+        arrayArray.push(data[i]);
+      }
     }
+    return arrayArray;
   }
-  return arrayArray;
-}
-
-function mainArrayParser(array) {
-  let finalArray = [];
-  for (let i = 0; i <= 3; i++) {
-    if (i == 2) {
-      finalArray.push(separateString(array));
+  
+  function mainArrayParser(array) {
+    let finalArray = [];
+    let arrayFunc = [separateAnother, separateArray, separateNumber, separateString];
+    for (let i = 0; i <= 3; i++) {
+        let data = arrayFunc[i](array);
+        finalArray.push(data);
     }
-    if (i == 1) {
-      finalArray.push(separateNumber(array));
-    }
-    if (i == 3) {
-      finalArray.push(separateAnother(array));
-    }
-    if (i == 0) {
-      finalArray.push(separateArray(array));
-    }
+    return finalArray;
   }
-  return finalArray;
-}
-
-const randomArray = [1, "a", 2, "b", false, [[1, 2], "1", "2"]];
-mainArrayParser(randomArray).map((item, index) => {
-  console.log(item);
-});
+  
+  const randomArray = [1, "a", 2, "b", false, [[1, 2], "1", "2"]];
+  mainArrayParser(randomArray).map((item) => {
+    console.log(item);
+  });

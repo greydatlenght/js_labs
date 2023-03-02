@@ -41,4 +41,4 @@ function separateString(data) {
   }
   
   const randomArray = [1, "a", 2, "b", false, [[1, 2], "1", "2"]];
-  mainArrayParser(randomArray).map((item) => { console.log(item); } );
+  mainArrayParser(randomArray).map( (item) => { console.log(item); } );

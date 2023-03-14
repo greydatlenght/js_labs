@@ -23,11 +23,11 @@ console.log(sum);
 //Задание 7
 // У нас есть следующий объект:
 let user2 = {
-  name: "John",
-  age: 30,
+
 };
 // Проверьте программно, что этот объект не пустой и что в нем есть ключ age.
-console.log(typeof user2.age == "object");
+// console.log(typeof user2.age == "object");
+console.log(!Object.keys(user2).length)
 console.log("age" in user2);
 
 //Задание 9

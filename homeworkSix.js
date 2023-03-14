@@ -28,7 +28,7 @@ let user2 = {
 };
 // Проверьте программно, что этот объект не пустой и что в нем есть ключ age.
 console.log(typeof user2.age == "object");
-console.log("age" in user2 ? true : false);
+console.log("age" in user2);
 
 //Задание 9
 // Создайте функцию multiplyNumeric(obj), которая умножает все числовые свойства объекта obj на 2.
